@@ -6,3 +6,73 @@
 
 // Bootstrap
 @import "~bootstrap/scss/bootstrap";
+
+body {
+    background: #000;
+    color: #fff;
+    overflow-x: hidden;
+    font-family: "Roboto";
+}
+
+a {
+    text-decoration: none !important;
+    color: #fff !important;
+}
+
+h1,
+.h1 {
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 150%;
+}
+h2,
+.h2 {
+}
+h3,
+.h3 {
+    font-weight: 700;
+    font-size: 36px;
+}
+
+[data-toggle="collapse"] {
+    display: none;
+}
+
+.pos-fill {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.main-slider {
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;
+    width: calc(100% + calc(100vw - 100%));
+    z-index: -1;
+    margin-top: -4%;
+    height: 100vh;
+}
+.main-slider .heading {
+    padding-top: 17rem;
+}
+
+.time__item {
+    padding: 20px 30px;
+    background: #121212;
+    text-align: center;
+}
+.time__item:not(:nth-child(1)) {
+    margin-left: 30px;
+}
+.time__title {
+    opacity: 0.4;
+}
+
+@media (max-width: 1200px) {
+    [data-toggle="collapse"] {
+        display: block;
+    }
+}

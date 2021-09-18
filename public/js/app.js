@@ -2073,7 +2073,97 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      imgMainSlider: __webpack_require__(/*! ../../../../../../../img/main-screen__bgc.jpg */ "./public/img/main-screen__bgc.jpg")
+    };
+  },
+  mounted: function mounted() {
+    console.log(this.imgMainSlider);
+  }
+});
 
 /***/ }),
 
@@ -6596,6 +6686,21 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 })));
 //# sourceMappingURL=bootstrap.js.map
 
+
+/***/ }),
+
+/***/ "./public/img/main-screen__bgc.jpg":
+/*!*****************************************!*\
+  !*** ./public/img/main-screen__bgc.jpg ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/main-screen__bgc.jpg?68ba4e15a02df4ae04a022dceb1ca94b");
 
 /***/ }),
 
@@ -37629,19 +37734,131 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("main", [
+      _c("div", { staticClass: "main-slider" }, [
+        _c("div", { staticClass: "img position-absolute pos-fill" }, [
+          _c("img", { attrs: { src: _vm.imgMainSlider.default, alt: "" } })
+        ]),
+        _vm._v(" "),
+        _vm._m(1)
+      ])
+    ]),
+    _vm._v(" "),
+    _c("footer")
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-4" }, [_vm._v("1")]),
+    return _c("header", [
+      _c(
+        "button",
+        {
+          staticClass: "navbar-toggler",
+          attrs: {
+            type: "button",
+            "data-toggle": "collapse",
+            "data-target": "#navbar-content",
+            "aria-controls": "navbar-content",
+            "aria-expanded": "false",
+            "aria-label": "Toggle navigation"
+          }
+        },
+        [_c("span", { staticClass: "navbar-toggler-icon" })]
+      ),
       _vm._v(" "),
-      _c("div", { staticClass: "col-md-4" }, [_vm._v("2")]),
+      _c(
+        "div",
+        {
+          staticClass: "collapse navbar-collapse show",
+          attrs: { id: "navbar-content" }
+        },
+        [
+          _c("div", { staticClass: "navbar-nav mt-3 offset-xl-1" }, [
+            _c(
+              "ul",
+              {
+                staticClass:
+                  "\n            nav\n            menu\n            align-items-xl-end align-items-center\n            flex-fill\n            justify-content-between\n            mod-list\n          "
+              },
+              [
+                _c("li", { staticClass: "current active" }, [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("Главная")])
+                ]),
+                _vm._v(" "),
+                _c("li", {}, [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("Курсы")])
+                ]),
+                _vm._v(" "),
+                _c("li", {}, [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("Расписание")])
+                ]),
+                _vm._v(" "),
+                _c("li", {}, [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("Преподаватели")])
+                ]),
+                _vm._v(" "),
+                _c("li", {}, [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("Рассылка")])
+                ]),
+                _vm._v(" "),
+                _c("li", {}, [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("Контакты")])
+                ])
+              ]
+            )
+          ])
+        ]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "container h-100" }, [
+      _c("div", { staticClass: "heading" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-9" }, [
+            _c("div", { staticClass: "h1 title" }, [
+              _vm._v("\n                Первый курс"),
+              _c("br"),
+              _vm._v("\n                по компьютерной сборке\n              ")
+            ])
+          ])
+        ])
+      ]),
       _vm._v(" "),
-      _c("div", { staticClass: "col-md-4" }, [_vm._v("3")])
+      _c("div", { staticClass: "d-flex time" }, [
+        _c("div", { staticClass: "time__item" }, [
+          _c("div", { staticClass: "time__number h3" }, [_vm._v("18")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "time__title" }, [_vm._v("Дней")])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "time__item" }, [
+          _c("div", { staticClass: "time__number h3" }, [_vm._v("18")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "time__title" }, [_vm._v("Часов")])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "time__item" }, [
+          _c("div", { staticClass: "time__number h3" }, [_vm._v("18")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "time__title" }, [_vm._v("Минут")])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "time__item" }, [
+          _c("div", { staticClass: "time__number h3" }, [_vm._v("18")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "time__title" }, [_vm._v("Секунд")])
+        ])
+      ])
     ])
   }
 ]

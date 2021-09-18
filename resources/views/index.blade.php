@@ -14,7 +14,7 @@
 				</div>
 				<div class="php-block">
 					<?php
-						$array = [1, 3, 2, 10, 15, 12, 30, 22];
+						$array = array(1, 3, 2, 10, 15, 12, 30, 22);
 						sort($array);
 						?>
 					<div class="h3">Сортировка в php</div>
