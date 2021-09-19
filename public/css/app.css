@@ -10002,6 +10002,10 @@ h3 {
     border-color: #dee2e6;
   }
 }
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: #000;
   color: #fff;
@@ -10065,6 +10069,10 @@ h3,
 
 .time__title {
   opacity: 0.4;
+}
+
+#m-feed-back-info {
+  color: #000 !important;
 }
 
 @media (max-width: 1200px) {

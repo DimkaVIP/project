@@ -1,7 +1,7 @@
 <template>
   <div>
     <header>
-      <button
+      <!-- <button
         class="navbar-toggler"
         type="button"
         data-toggle="collapse"
@@ -44,7 +44,7 @@
             </li>
           </ul>
         </div>
-      </div>
+      </div> -->
     </header>
     <main>
       <div class="main-slider">
@@ -82,20 +82,47 @@
           </div>
         </div>
       </div>
+      <div class="action">
+        <button class="btn" @click="openModal">Сортировка JS</button>
+      </div>
     </main>
     <footer></footer>
+    <div id="m-feed-back-info" class="modal fade" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <p class="modal-title">Модальное окно</p>
+            <button class="close" type="button" data-dismiss="modal">×</button>
+          </div>
+          <div class="modal-body">
+            <my-modal :numbers="numbers"></my-modal>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import MyModal from "./Modal.vue";
+
 export default {
+  components: {
+    MyModal,
+  },
   data() {
     return {
       imgMainSlider: require("/img/main-screen__bgc.jpg"),
+      numbers: [1, 3, 2, 10, 15, 12, 30, 22],
     };
   },
-  mounted() {
-    console.log(this.imgMainSlider);
+  mounted() {},
+  methods: {
+    openModal() {
+      jQuery(document).ready(function ($) {
+        $("#m-feed-back-info").modal();
+      });
+    },
   },
 };
 </script>
