@@ -2171,6 +2171,40 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
@@ -2179,10 +2213,46 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       imgMainSlider: __webpack_require__(/*! ../../../../../../../img/main-screen__bgc.jpg */ "./public/img/main-screen__bgc.jpg"),
-      numbers: [1, 3, 2, 10, 15, 12, 30, 22]
+      numbers: [1, 3, 2, 10, 15, 12, 30, 22],
+      days: 0,
+      hours: 0,
+      minutes: 0,
+      seconds: 0
     };
   },
-  mounted: function mounted() {},
+  mounted: function mounted() {
+    var _this = this;
+
+    this.days = JSON.parse(localStorage.getItem("days")) ? +JSON.parse(localStorage.getItem("days")) : 18;
+    this.hours = JSON.parse(localStorage.getItem("hours")) ? +JSON.parse(localStorage.getItem("hours")) : 18;
+    this.minutes = JSON.parse(localStorage.getItem("minutes")) ? +JSON.parse(localStorage.getItem("minutes")) : 18;
+    this.seconds = JSON.parse(localStorage.getItem("seconds")) ? +JSON.parse(localStorage.getItem("seconds")) : 18;
+    setInterval(function () {
+      _this.seconds--;
+      JSON.stringify(localStorage.setItem("seconds", _this.seconds));
+
+      if (_this.seconds == 0) {
+        _this.seconds = 60;
+        JSON.stringify(localStorage.setItem("seconds", _this.seconds));
+        _this.minutes--;
+        JSON.stringify(localStorage.setItem("minutes", _this.minutes));
+      }
+
+      if (_this.minutes == 0) {
+        _this.minutes = 60;
+        JSON.stringify(localStorage.setItem("minutes", _this.minutes));
+        _this.hours--;
+        JSON.stringify(localStorage.setItem("hours", _this.hours));
+      }
+
+      if (_this.hours == 0) {
+        _this.hours = 24;
+        JSON.stringify(localStorage.setItem("hours", _this.hours));
+        _this.days--;
+        JSON.stringify(localStorage.setItem("days", _this.days));
+      }
+    }, 1000);
+  },
   methods: {
     openModal: function openModal() {
       jQuery(document).ready(function ($) {
@@ -37885,12 +37955,56 @@ var render = function() {
           _c("img", { attrs: { src: _vm.imgMainSlider.default, alt: "" } })
         ]),
         _vm._v(" "),
-        _vm._m(0)
+        _c("div", { staticClass: "container h-100" }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _c("div", { staticClass: "d-flex time" }, [
+            _c("div", { staticClass: "time__item" }, [
+              _c("div", { staticClass: "time__number h3" }, [
+                _vm._v(_vm._s(_vm.days))
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "time__title" }, [_vm._v("Дней")])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "time__item" }, [
+              _c("div", { staticClass: "time__number h3" }, [
+                _vm._v(_vm._s(_vm.hours))
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "time__title" }, [_vm._v("Часов")])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "time__item" }, [
+              _c("div", { staticClass: "time__number h3" }, [
+                _vm._v(_vm._s(_vm.minutes))
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "time__title" }, [_vm._v("Минут")])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "time__item" }, [
+              _c("div", { staticClass: "time__number h3" }, [
+                _vm._v(_vm._s(_vm.seconds))
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "time__title" }, [_vm._v("Секунд")])
+            ])
+          ])
+        ])
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "action" }, [
-        _c("button", { staticClass: "btn", on: { click: _vm.openModal } }, [
-          _vm._v("Сортировка JS")
+        _c("div", { staticClass: "row align-items-center" }, [
+          _c("div", { staticClass: "col-md-3" }, [
+            _c("button", { staticClass: "btn", on: { click: _vm.openModal } }, [
+              _vm._v("Сортировка JS")
+            ])
+          ]),
+          _vm._v(" "),
+          _vm._m(1),
+          _vm._v(" "),
+          _vm._m(2)
         ])
       ])
     ]),
@@ -37906,7 +38020,7 @@ var render = function() {
       [
         _c("div", { staticClass: "modal-dialog modal-dialog-centered" }, [
           _c("div", { staticClass: "modal-content" }, [
-            _vm._m(1),
+            _vm._m(3),
             _vm._v(" "),
             _c(
               "div",
@@ -37925,42 +38039,72 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container h-100" }, [
-      _c("div", { staticClass: "heading" }, [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-md-9" }, [
-            _c("div", { staticClass: "h1 title" }, [
-              _vm._v("\n                Первый курс"),
-              _c("br"),
-              _vm._v("\n                по компьютерной сборке\n              ")
-            ])
+    return _c("div", { staticClass: "heading" }, [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-md-9" }, [
+          _c("div", { staticClass: "h1 title" }, [
+            _vm._v("\n                Первый курс"),
+            _c("br"),
+            _vm._v("\n                по компьютерной сборке\n              ")
           ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-3" }, [
+      _c("div", { staticClass: "students" }, [
+        _c("div", { staticClass: "studens__item" }, [
+          _c("div", { staticClass: "studens__title" }, [
+            _vm._v("Учеников всего:")
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "studens__number" }, [_vm._v("200")])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "studens__item" }, [
+          _c("div", { staticClass: "studens__title" }, [
+            _vm._v("Успешно закончили курс:")
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "studens__number" }, [_vm._v("190")])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-6" }, [
+      _c("div", { staticClass: "students" }, [
+        _c("div", { staticClass: "studens__item pl-0 mb-2" }, [
+          _c("div", { staticClass: "studens__title" }, [
+            _vm._v("Заработано учениками:")
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "studens__number" }, [_vm._v("600 000₽")])
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "d-flex time" }, [
-        _c("div", { staticClass: "time__item" }, [
-          _c("div", { staticClass: "time__number h3" }, [_vm._v("18")]),
+      _c("div", { staticClass: "my-progress" }, [
+        _c("div", { staticClass: "my-progress__line" }, [
+          _c("div", { staticClass: "my-progress__success" }),
           _vm._v(" "),
-          _c("div", { staticClass: "time__title" }, [_vm._v("Дней")])
+          _c("div", { staticClass: "my-progress__plan" })
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "time__item" }, [
-          _c("div", { staticClass: "time__number h3" }, [_vm._v("18")]),
+        _c("div", { staticClass: "my-progress__numbers" }, [
+          _c("div", { staticClass: "my-progress__number" }, [
+            _vm._v("600 000₽")
+          ]),
           _vm._v(" "),
-          _c("div", { staticClass: "time__title" }, [_vm._v("Часов")])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "time__item" }, [
-          _c("div", { staticClass: "time__number h3" }, [_vm._v("18")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "time__title" }, [_vm._v("Минут")])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "time__item" }, [
-          _c("div", { staticClass: "time__number h3" }, [_vm._v("18")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "time__title" }, [_vm._v("Секунд")])
+          _c("div", { staticClass: "my-progress__number" }, [
+            _vm._v("1 000 000₽")
+          ])
         ])
       ])
     ])

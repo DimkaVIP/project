@@ -64,26 +64,60 @@
           </div>
           <div class="d-flex time">
             <div class="time__item">
-              <div class="time__number h3">18</div>
+              <div class="time__number h3">{{ days }}</div>
               <div class="time__title">Дней</div>
             </div>
             <div class="time__item">
-              <div class="time__number h3">18</div>
+              <div class="time__number h3">{{ hours }}</div>
               <div class="time__title">Часов</div>
             </div>
             <div class="time__item">
-              <div class="time__number h3">18</div>
+              <div class="time__number h3">{{ minutes }}</div>
               <div class="time__title">Минут</div>
             </div>
             <div class="time__item">
-              <div class="time__number h3">18</div>
+              <div class="time__number h3">{{ seconds }}</div>
               <div class="time__title">Секунд</div>
             </div>
           </div>
         </div>
       </div>
       <div class="action">
-        <button class="btn" @click="openModal">Сортировка JS</button>
+        <div class="row align-items-center">
+          <div class="col-md-3">
+            <button class="btn" @click="openModal">Сортировка JS</button>
+          </div>
+          <div class="col-md-3">
+            <div class="students">
+              <div class="studens__item">
+                <div class="studens__title">Учеников всего:</div>
+                <div class="studens__number">200</div>
+              </div>
+              <div class="studens__item">
+                <div class="studens__title">Успешно закончили курс:</div>
+                <div class="studens__number">190</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="students">
+              <div class="studens__item pl-0 mb-2">
+                <div class="studens__title">Заработано учениками:</div>
+                <div class="studens__number">600 000₽</div>
+              </div>
+            </div>
+            <div class="my-progress">
+              <div class="my-progress__line">
+                <div class="my-progress__success"></div>
+                <div class="my-progress__plan"></div>
+              </div>
+              <div class="my-progress__numbers">
+                <div class="my-progress__number">600 000₽</div>
+                <div class="my-progress__number">1 000 000₽</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
     <footer></footer>
@@ -114,9 +148,49 @@ export default {
     return {
       imgMainSlider: require("/img/main-screen__bgc.jpg"),
       numbers: [1, 3, 2, 10, 15, 12, 30, 22],
+      days: 0,
+      hours: 0,
+      minutes: 0,
+      seconds: 0,
     };
   },
-  mounted() {},
+  mounted() {
+    this.days = JSON.parse(localStorage.getItem("days"))
+      ? +JSON.parse(localStorage.getItem("days"))
+      : 18;
+    this.hours = JSON.parse(localStorage.getItem("hours"))
+      ? +JSON.parse(localStorage.getItem("hours"))
+      : 18;
+    this.minutes = JSON.parse(localStorage.getItem("minutes"))
+      ? +JSON.parse(localStorage.getItem("minutes"))
+      : 18;
+    this.seconds = JSON.parse(localStorage.getItem("seconds"))
+      ? +JSON.parse(localStorage.getItem("seconds"))
+      : 18;
+
+    setInterval(() => {
+      this.seconds--;
+      JSON.stringify(localStorage.setItem("seconds", this.seconds));
+      if (this.seconds == 0) {
+        this.seconds = 60;
+        JSON.stringify(localStorage.setItem("seconds", this.seconds));
+        this.minutes--;
+        JSON.stringify(localStorage.setItem("minutes", this.minutes));
+      }
+      if (this.minutes == 0) {
+        this.minutes = 60;
+        JSON.stringify(localStorage.setItem("minutes", this.minutes));
+        this.hours--;
+        JSON.stringify(localStorage.setItem("hours", this.hours));
+      }
+      if (this.hours == 0) {
+        this.hours = 24;
+        JSON.stringify(localStorage.setItem("hours", this.hours));
+        this.days--;
+        JSON.stringify(localStorage.setItem("days", this.days));
+      }
+    }, 1000);
+  },
   methods: {
     openModal() {
       jQuery(document).ready(function ($) {
