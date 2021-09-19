@@ -59,15 +59,17 @@ h1,
 .main-slider .heading {
     padding-top: 17rem;
 }
-
+.time {
+    flex-wrap: wrap;
+}
 .time__item {
     padding: 20px 30px;
     background: #121212;
     text-align: center;
+    margin-right: 30px;
+    margin-bottom: 1rem;
 }
-.time__item:not(:nth-child(1)) {
-    margin-left: 30px;
-}
+
 .time__title {
     opacity: 0.4;
 }
@@ -147,7 +149,47 @@ h1,
     flex: 0 0 10%;
 }
 @media (max-width: 1200px) {
-    [data-toggle="collapse"] {
-        display: block;
+    // [data-toggle="collapse"] {
+    //     display: block;
+    // }
+    h1,
+    .h1 {
+        font-size: 32px;
+    }
+    h3,
+    .h3 {
+        font-size: 28px;
+    }
+    .main-slider {
+        margin-top: 0;
+        overflow: hidden;
+    }
+    .main-slider .time {
+        justify-content: space-around;
+    }
+    .main-slider .img img {
+        object-fit: cover;
+        object-position: -1106px;
+    }
+    .main-slider .heading {
+        padding-top: 0;
+    }
+    .main-slider .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .btn {
+        margin-bottom: 1rem;
+    }
+    .studens__item {
+        margin-bottom: 1rem;
+        padding-left: 0;
+    }
+}
+
+@media (min-width: 800px) and (max-width: 1200px) {
+    .main-slider .img img {
+        object-position: -691px;
     }
 }
